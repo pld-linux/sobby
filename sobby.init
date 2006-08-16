@@ -1,0 +1,88 @@
+#!/bin/sh
+#
+# sobby:	obby dedicated serwer
+#
+# chkconfig:	345 35 65
+#
+# description:	Stand alone server for the obby colaborative editor
+
+# Source function library
+. /etc/rc.d/init.d/functions
+
+# Get network config
+. /etc/sysconfig/network
+
+# Check that networking is up.
+if is_yes "${NETWORKING}"; then
+	if [ ! -f /var/lock/subsys/network ]; then
+		msg_network_down sobby
+		exit 1
+	fi
+else
+	exit 0
+fi
+
+. /etc/sysconfig/sobby
+
+[ -z "$SOBBY_PORT" ] && SOBBY_PORT=6522
+
+# See how we were called.
+case "$1" in
+  start)
+	# Check if the service is already running?
+	if [ ! -f /var/lock/subsys/sobby ]; then
+		msg_starting sobby
+		sobby -p $SOBBY_PORT $SOBBY_OPTIONS
+		RETVAL=$?
+		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/sobby
+	else
+		msg_already_running sobby
+	fi
+	;;
+  stop)
+	if [ -f /var/lock/subsys/sobby ]; then
+		# Stop daemons.
+		msg_stopping sobby
+		killproc sobby
+		rm -f /var/lock/subsys/sobby
+	else
+		msg_not_running sobby
+	fi
+	;;
+  restart)
+	$0 stop
+	$0 start
+	exit $?
+	;;
+  reload)
+	if [ -f /var/lock/subsys/sobby ]; then
+		msg_reloading sobby
+		killproc sobby -HUP
+		RETVAL=$?
+	else
+		msg_not_running sobby
+		RETVAL=7
+	fi
+	;;
+  force-reload)
+	# if program allows reloading without stopping
+	$0 reload
+
+	# or if it doesn't
+	$0 restart
+
+	exit $?
+	;;
+  status)
+	status sobby
+	RETVAL=$?
+	;;
+  *)
+	msg_usage "$0 {start|stop|restart|reload|force-reload|status}"
+	exit 3
+esac
+
+exit $RETVAL
+
+# This must be last line !
+# vi:syntax=sh
