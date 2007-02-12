@@ -1,5 +1,5 @@
 Summary:	Sobby network editor server
-Summary(pl.UTF-8):   Sobby - serwer edytora sieciowego
+Summary(pl.UTF-8):	Sobby - serwer edytora sieciowego
 Name:		sobby
 Version:	0.3.0
 Release:	1
