@@ -1,15 +1,15 @@
 Summary:	Sobby network editor server
 Summary(pl.UTF-8):	Sobby - serwer edytora sieciowego
 Name:		sobby
-Version:	0.3.0
+Version:	0.4.3
 Release:	1
 License:	BSD
 Group:		Applications/Editors
 Source0:	http://releases.0x539.de/sobby/%{name}-%{version}.tar.gz
-# Source0-md5:	5408fc08d610be5aac4476c6ea6277f9
+# Source0-md5:	90fd8c4935d71ec0458ff0378d53a3bf
 Source1:	%{name}.init
 URL:		http://sobby.0x539.de/
-BuildRequires:	obby-devel >= 0.3.0
+BuildRequires:	obby-devel >= 0.4.3
 BuildRequires:	slang-devel
 Requires(post,preun):	/sbin/chkconfig
 Requires:	rc-scripts
@@ -54,3 +54,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
 %attr(754,root,root) /etc/rc.d/init.d/%{name}
+%{_mandir}/man1/*.1.gz
