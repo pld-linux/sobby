@@ -54,4 +54,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
 %attr(754,root,root) /etc/rc.d/init.d/%{name}
-%{_mandir}/man1/*.1.gz
+%{_mandir}/man1/*.1*
