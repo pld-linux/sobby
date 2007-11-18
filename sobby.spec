@@ -10,6 +10,7 @@ Source0:	http://releases.0x539.de/sobby/%{name}-%{version}.tar.gz
 Source1:	%{name}.init
 URL:		http://sobby.0x539.de/
 BuildRequires:	obby-devel >= 0.4.3
+BuildRequires:	rpmbuild(macros) >= 1.268
 BuildRequires:	slang-devel
 Requires(post,preun):	/sbin/chkconfig
 Requires:	rc-scripts
