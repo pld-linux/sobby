@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	Sobby - serwer edytora sieciowego
 Name:		sobby
 Version:	0.4.3
 Release:	1
-License:	BSD
+License:	GPL v2+
 Group:		Applications/Editors
 Source0:	http://releases.0x539.de/sobby/%{name}-%{version}.tar.gz
 # Source0-md5:	90fd8c4935d71ec0458ff0378d53a3bf
