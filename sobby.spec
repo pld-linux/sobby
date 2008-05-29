@@ -8,7 +8,7 @@ Group:		Applications/Editors
 Source0:	http://releases.0x539.de/sobby/%{name}-%{version}.tar.gz
 # Source0-md5:	805f37a544567e649e1dcbb385683486
 Source1:	%{name}.init
-URL:		http://sobby.0x539.de/
+URL:		http://gobby.0x539.de/
 BuildRequires:	avahi-glib
 BuildRequires:	glibmm-devel >= 2.4
 BuildRequires:	libxml++-devel >= 2.6
