@@ -2,7 +2,7 @@ Summary:	Sobby network editor server
 Summary(pl.UTF-8):	Sobby - serwer edytora sieciowego
 Name:		sobby
 Version:	0.4.8
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Applications/Editors
 Source0:	http://releases.0x539.de/sobby/%{name}-%{version}.tar.gz
@@ -11,14 +11,14 @@ Source1:	%{name}.init
 URL:		http://gobby.0x539.de/
 BuildRequires:	avahi-glib-devel
 BuildRequires:	glibmm-devel >= 2.6.0
-BuildRequires:	libxml++-devel >= 2.6
+BuildRequires:	libxml++2-devel >= 2.6
 BuildRequires:	net6-devel >= 1.3.12
 BuildRequires:	obby-devel >= 0.4.3
 BuildRequires:	rpmbuild(macros) >= 1.268
 BuildRequires:	slang-devel
 Requires(post,preun):	/sbin/chkconfig
 Requires:	glibmm >= 2.6.0
-Requires:	libxml++ >= 2.6
+Requires:	libxml++2 >= 2.6
 Requires:	net6 >= 1.3.12
 Requires:	obby >= 0.4.3
 Requires:	rc-scripts
