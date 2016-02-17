@@ -2,7 +2,7 @@ Summary:	Sobby network editor server
 Summary(pl.UTF-8):	Sobby - serwer edytora sieciowego
 Name:		sobby
 Version:	0.4.8
-Release:	4
+Release:	5
 License:	GPL v2+
 Group:		Applications/Editors
 Source0:	http://releases.0x539.de/sobby/%{name}-%{version}.tar.gz
